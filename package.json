@@ -57,6 +57,15 @@
                 ],
                 "default": "Modern sans-serif"
             },
+            "color_option": {
+                "type": "select",
+                "options": [
+                    "Dark",
+                    "Light",
+                    "Auto"
+                ],
+                "default": "Auto"
+            },
             "email_signup_text": {
                 "type": "text",
                 "group": "homepage"
@@ -122,10 +131,11 @@
     "devDependencies": {
         "autoprefixer": "10.4.2",
         "beeper": "2.1.0",
-        "cssnano": "5.0.16",
+        "cssnano": "^5.0.16",
         "gscan": "4.22.0",
-        "gulp": "4.0.2",
+        "gulp": "^4.0.2",
         "gulp-concat": "2.6.1",
+        "gulp-cssnano": "^2.1.3",
         "gulp-livereload": "4.0.2",
         "gulp-postcss": "9.0.1",
         "gulp-uglify": "3.0.2",

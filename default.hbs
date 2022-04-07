@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="{{@site.locale}}">
+<html lang="{{@site.locale}}"
+    class="{{#match @custom.color_option "Dark"}}dark{{/match}}{{#match @custom.color_option "Light"}}light{{/match}}">
 
 <head>
     <meta charset="utf-8">
@@ -11,6 +12,29 @@
 
     <link rel="stylesheet" href="{{asset "built/screen.css"}}">
 
+
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        {{#match @custom.color_option "Auto"}}
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark')
+            } else {
+                document.documentElement.classList.remove('dark')
+            }
+        {{/match}}
+
+        if(localStorage.theme !== undefined){
+            if(localStorage.getItem('theme') == 'light'){
+                document.querySelector('html').classList.add('light');
+                document.querySelector('html').classList.remove('dark');
+            }
+            else if(localStorage.getItem('theme') == 'dark'){
+                document.querySelector('html').classList.add('dark');
+                document.querySelector('html').classList.remove('light');
+            }
+        }
+    </script>
+
     {{ghost_head}}
 </head>
 
@@ -21,8 +45,9 @@
         {{#is "home"}}
             {{> cover}}
             {{#if @custom.show_featured_posts}}
-                {{> featured}}
+                {{> featured-courses}}
             {{/if}}
+            {{> featured-posts}}
         {{/is}}
 
         <div class="site-content">
@@ -41,7 +66,26 @@
     </script>
 
     <script src="{{asset "built/main.min.js"}}"></script>
-
+<script>
+    var d = document,
+    html = d.querySelector('html'),
+    htmlDark = d.querySelector('html.dark'),
+    htmlLight = d.querySelector('html.light'),
+    darkLight = d.querySelector('.dark-light');
+    darkLight.addEventListener('click', () => {
+        console.log(html.classList.contains('dark'));
+        if(html.classList.contains('dark')){
+            html.classList.add('light');
+            html.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+        }else{
+            html.classList.add('dark');
+            html.classList.remove('light');
+            localStorage.setItem('theme', 'dark');
+        }
+        
+    })
+</script>
     {{ghost_foot}}
 </body>
 
