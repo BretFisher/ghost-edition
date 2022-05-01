@@ -3,26 +3,25 @@
 <div class="content-area">
     <main class="site-main">
         <header class="feed-header container medium">
-            {{#if @custom.feed_title}}
-                <div class="feed-header-wrapper">
-                    <h2 class="feed-header-title">{{@custom.feed_title}}</h2>
-                </div>
-            {{/if}}
+            <div class="title-wrap">
+                {{#if @custom.feed_title}}
+                    <h4>{{@custom.feed_title}}</h4>
+                {{/if}}
+                <a href="/blog" class="view-all">
+                    {{t "View All"}}
+                    <span>&#187;</span>
+                </a>
+            </div>
         </header>
 
+        {{#get "posts" limit="10" filter="featured:false" include="tags,authors"}}
         <div class="post-feed{{#match @custom.feed_layout "!=" "Minimal"}} expanded{{/match}}{{#match @custom.feed_layout "Right thumbnail"}} right-thumbnail{{/match}}{{#match @custom.feed_layout "Text-only"}} text-only{{/match}} container medium">
-            {{^unless @member}}
-                {{#foreach posts}}
-                    {{> "loop"}}
-                {{/foreach}}
-            {{else}}
-                {{#foreach posts}}
-                    {{> "loop"}}
-                {{/foreach}}
-            {{/unless}}
+            {{#foreach posts}}
+                {{> "loop"}}
+            {{/foreach}}
         </div>
+        {{/get}}
 
-        {{pagination}}
     </main>
 </div>
 
