@@ -91,9 +91,11 @@
     padding: 0;
     row-gap: 10px;
 }
+
 .footer-widget li a {
     transition: all 0.4s;
 }
+
 .footer-widget li a:hover {
     padding-left: 10px;
 }
@@ -102,6 +104,7 @@
     .footer-widget-wrap {
         grid-template-columns: 1fr;
     }
+
     .footer-inner {
         grid-template-columns: 1fr;
         padding-top: 3rem;
