@@ -16,7 +16,8 @@
 }
 
 .copyright {
-    font-size: 1.2rem;
+    margin-top: 50px;
+    text-align: center;
 }
 
 .footer-nav {
@@ -76,7 +77,31 @@
     height: 15px;
 }
 
+.footer-widget-wrap {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-top: 1px solid var(--light-gray-color);
+    padding-top: 30px;
+    gap: 20px;
+}
+
+.footer-widget ul {
+    display: grid;
+    list-style: none;
+    padding: 0;
+    row-gap: 10px;
+}
+.footer-widget li a {
+    transition: all 0.4s;
+}
+.footer-widget li a:hover {
+    padding-left: 10px;
+}
+
 @media (max-width: 767px) {
+    .footer-widget-wrap {
+        grid-template-columns: 1fr;
+    }
     .footer-inner {
         grid-template-columns: 1fr;
         padding-top: 3rem;
