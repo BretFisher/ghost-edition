@@ -1,47 +1,85 @@
 <footer class="site-footer container">
-    <div class="footer-inner">
-        <div class="footer-left">
-            <div class="copyright">
-                {{@site.title}} © {{date format="YYYY"}}
+    <div class="">
+        <div class="footer-widget-wrap">
+            <div class="footer-widget">
+                <h3>Learn Container DevOps</h3>
+                <ul>
+                    <li>
+                        <a href="/courses">Udemy Courses</a>
+                    </li>
+                    <li>
+                        <a href="/podcast">Podcast</a>
+                    </li>
+                    <li>
+                        <a href="/newsletter">Newsletter</a>
+                    </li>
+                    <li>
+                        <a href="/docker">Docker Resources</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-widget">
+                <h3>Community</h3>
+                <ul>
+                    <li>
+                        <a target="_blank" href="https://devops.fan"
+                        >DevOps Discord Server</a>
+                    </li>
+                    <li>
+                        <a
+                            target="_blank"
+                            href="https://patreon.com/bretfisher"
+                        >Patreon Membership</a>
+                    </li>
+                    <li>
+                        <a
+                            target="_blank"
+                            href="https://www.youtube.com/c/BretFisherDockerandDevOps/videos?view=2&sort=dd&live_view=502&shelf_id=0"
+                        >Upcoming YouTube Lives</a>
+                    </li>
+                    <li>
+                        <a
+                            target="_blank"
+                            href="https://github.com/BretFisher/ama"
+                        >Ask Me Anything</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-widget">
+                <h3>Find Me</h3>
+                <ul>
+                    <li>
+                        <a
+                            target="_blank"
+                            href="https://github.com/BretFisher"
+                        >GitHub</a>
+                    </li>
+                    <li>
+                        <a
+                            target="_blank"
+                            href="https://twitter.com/BretFisher"
+                        >Twitter</a>
+                    </li>
+                    <li>
+                        <a
+                            target="_blank"
+                            href="https://www.instagram.com/bretfisher/"
+                        >Instagram</a>
+                    </li>
+                    <li>
+                        <a
+                            target="_blank"
+                            href="https://www.linkedin.com/in/bretefisher"
+                        >Linkedin</a>
+                    </li>
+                </ul>
             </div>
         </div>
-
-        <nav class="footer-nav">
-            {{navigation type="secondary"}}
-        </nav>
-
-        <div class="footer-right">
-            <div class="social">
-
-                <a class="social-item social-item-github"
-                    href="https://github.com/bretfisher" target="_blank"
-                    rel="noopener noreferrer" aria-label="GitHub">
-                    {{> icons/github}}
-                </a>
-
-                <a class="social-item social-item-youtube"
-                    href="https://www.youtube.com/BretFisherDockerandDevOps" target="_blank"
-                    rel="noopener noreferrer" aria-label="YouTube">
-                    {{> icons/youtube}}
-                </a>
-
-                <a class="social-item social-item-twitter"
-                    href="{{twitter_url @site.twitter}}" target="_blank"
-                    rel="noopener noreferrer" aria-label="Twitter">
-                    {{> icons/twitter}}
-                </a>
-
-                <a class="social-item social-item-instagram"
-                    href="https://www.instagram.com/bretfisher/" target="_blank"
-                    rel="noopener noreferrer" aria-label="Instagram">
-                    {{> icons/instagram}}
-                </a>
-
-                <a class="social-item social-item-linkedin"
-                    href="https://www.linkedin.com/in/bretefisher" target="_blank"
-                    rel="noopener noreferrer" aria-label="LinkedIn">
-                    {{> icons/linkedin}}
-                </a>
+        <div class="">
+            <div class="copyright">
+                {{@site.title}}
+                ©
+                {{date format="YYYY"}}
             </div>
         </div>
     </div>

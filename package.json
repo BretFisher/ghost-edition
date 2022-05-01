@@ -116,7 +116,8 @@
         "dev": "gulp",
         "test": "gscan .",
         "test:ci": "gscan --fatal --verbose .",
-        "zip": "gulp zip"
+        "zip": "gulp zip",
+        "lint-css": "npx stylelint 'assets/css/**/*.css' --config .github/linters/.stylelintrc.json"
     },
     "devDependencies": {
         "autoprefixer": "10.4.5",
@@ -131,7 +132,9 @@
         "gulp-zip": "5.1.0",
         "postcss": "8.4.12",
         "postcss-easy-import": "4.0.0",
-        "pump": "3.0.0"
+        "pump": "3.0.0",
+        "stylelint": "^14.8.1",
+        "stylelint-config-standard": "^25.0.0"
     },
     "browserslist": [
         "defaults"
