@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v3
 
       - uses: TryGhost/action-deploy-theme@v1.5.0
         with:
