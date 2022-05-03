@@ -30,4 +30,5 @@
         {{/get}}
 
     </main>
+{{#contentFor "body_class"}}{{#if next}} paged-next{{/if}}{{#if @site.cover_image}} with-full-cover{{/if}}{{#if @member}} logged-in{{/if}}{{/contentFor}}
 </div>
