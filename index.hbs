@@ -14,7 +14,7 @@
             </div>
         </header>
 
-        {{#get "posts" limit="10" filter="featured:false" include="tags,authors"}}
+        {{#get "posts" limit="10" filter="featured:false"}}
         <div class="post-feed{{#match @custom.feed_layout "!=" "Minimal"}} expanded{{/match}}{{#match @custom.feed_layout "Right thumbnail"}} right-thumbnail{{/match}}{{#match @custom.feed_layout "Text-only"}} text-only{{/match}} container medium">
             {{#foreach posts}}
                 {{> "loop"}}
@@ -30,5 +30,5 @@
         {{/get}}
 
     </main>
-{{#contentFor "body_class"}}{{#if next}} paged-next{{/if}}{{#if @site.cover_image}} with-full-cover{{/if}}{{#if @member}} logged-in{{/if}}{{/contentFor}}
+{{#contentFor "body_class"}}{{#if @site.cover_image}} with-full-cover{{/if}}{{#if @member}} logged-in{{/if}}{{/contentFor}}
 </div>
