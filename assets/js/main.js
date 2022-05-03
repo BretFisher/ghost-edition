@@ -10,7 +10,6 @@ subMenu();
 featured();
 featuredPages();
 feedLayout();
-pagination();
 // archive();
 video();
 gallery();
@@ -184,35 +183,6 @@ function feedLayout() {
         feed.classList.add('expanded');
         localStorage.removeItem('edition_layout');
     });
-}
-
-function pagination() {
-    'use strict';
-    var infScroll;
-
-    if (body.classList.contains('paged-next')) {
-        infScroll = new InfiniteScroll('.post-feed', {
-            append: '.feed',
-            button: '.infinite-scroll-button',
-            debug: false,
-            hideNav: '.pagination',
-            history: false,
-            path: '.pagination .older-posts',
-            scrollThreshold: false,
-        });
-
-        var button = document.querySelector('.infinite-scroll-button');
-
-        infScroll.on('request', function (_path, _fetchPromise) {
-            button.classList.add('loading');
-        });
-
-        infScroll.on('append', function (_response, _path, items) {
-            items[0].classList.add('feed-paged');
-            button.classList.remove('loading');
-            archive(items);
-        });
-    }
 }
 
 function archive(data) {
