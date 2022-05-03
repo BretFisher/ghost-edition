@@ -1,8 +1,14 @@
-{{#get "pages" filter="featured:true+tags:course" limit="all" as |featured|}}
+{{#get "posts" filter="featured:true" limit="all" as |featured|}}
     {{#if featured}}
         <section class="featured-wrapper container">
             {{#if @custom.featured_title}}
-                <h2 class="featured-title">{{@custom.featured_title}}</h2>
+                <div class="title-wrap">
+                    <h4>{{@custom.featured_title}}</h4>
+                    <a href="/featured" class="view-all">
+                        {{t "View All"}}
+                        <span>&#187;</span>
+                    </a>
+                </div>
             {{/if}}
             <div class="featured-feed">
                 {{#foreach featured}}

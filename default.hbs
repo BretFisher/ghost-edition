@@ -20,10 +20,12 @@
 
         {{#is "home"}}
             {{> cover}}
-            {{#if @custom.show_featured_posts}}
-                {{> featured-courses}}
+            {{#if @custom.show_featured_pages}}
+                {{> featured-pages}}
             {{/if}}
-            {{> featured-posts}}
+            {{#if @custom.show_featured_posts}}
+                {{> featured}}
+            {{/if}}
         {{/is}}
 
         <div class="site-content">

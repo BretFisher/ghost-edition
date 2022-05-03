@@ -79,6 +79,16 @@
                 "default": "Featured articles",
                 "group": "homepage"
             },
+            "show_featured_pages": {
+                "type": "boolean",
+                "default": true,
+                "group": "homepage"
+            },
+            "featured_pages_title": {
+                "type": "text",
+                "default": "Featured pages",
+                "group": "homepage"
+            },
             "feed_title": {
                 "type": "text",
                 "default": "Latest",

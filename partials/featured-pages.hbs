@@ -1,18 +1,17 @@
-{{#get "pages" filter="featured:true+tags:course" limit="all" as |featured|}}
-    {{#if featured}}
+{{#get "pages" filter="featured:true" limit="all" as |featured-pages|}}
+    {{#if featured-pages}}
         <section class="featured-wrapper container">
-            <div class="title-wrap">
-                {{#if @custom.featured_title}}
-                    <h4>{{@custom.featured_title}}</h4>
-                {{/if}}
-                <a href="/courses" class="view-all">
-                    {{t "View All"}}
-                    <span>&#187;</span>
-                </a>
-            </div>
-
-            <div class="featured-feed">
-                {{#foreach featured}}
+            {{#if @custom.featured_pages_title}}
+                <div class="title-wrap">
+                    <h4>{{@custom.featured_pages_title}}</h4>
+                    <a href="/courses" class="view-all">
+                        {{t "View All"}}
+                        <span>&#187;</span>
+                    </a>
+                </div>
+            {{/if}}
+            <div class="featured-page">
+                {{#foreach featured-pages}}
                     <article class="{{post_class}}">
                         {{#if feature_image}}
                             <div class="u-placeholder horizontal">
