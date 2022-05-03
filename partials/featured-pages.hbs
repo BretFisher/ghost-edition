@@ -1,17 +1,17 @@
-{{#get "posts" filter="featured:true" limit="3" as |featured|}}
-    {{#if featured}}
+{{#get "pages" filter="featured:true" limit="3" as |featured-pages|}}
+    {{#if featured-pages}}
         <section class="featured-wrapper container">
-            {{#if @custom.featured_title}}
+            {{#if @custom.featured_pages_title}}
                 <div class="title-wrap">
-                    <h4>{{@custom.featured_title}}</h4>
-                    <a href="/featured" class="view-all">
+                    <h4>{{@custom.featured_pages_title}}</h4>
+                    <a href="/courses" class="view-all">
                         {{t "View All"}}
                         <span>&#187;</span>
                     </a>
                 </div>
             {{/if}}
-            <div class="featured-feed">
-                {{#foreach featured}}
+            <div class="featured-page">
+                {{#foreach featured-pages}}
                     <article class="{{post_class}}">
                         {{#if feature_image}}
                             <div class="u-placeholder horizontal">

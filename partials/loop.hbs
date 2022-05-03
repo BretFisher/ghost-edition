@@ -1,10 +1,10 @@
 <article class="feed {{post_class}}" data-month="{{date format="MMMM YYYY"}}">
     <div class="feed-calendar">
         <div class="feed-calendar-month">
-            {{date published_at format="MMM"}}
+            {{date updated_at format="MMM"}}
         </div>
         <div class="feed-calendar-day">
-            {{date published_at format="DD"}}
+            {{date updated_at format="YYYY"}}
         </div>
     </div>
     {{#match @custom.feed_layout "!=" "Text-only"}}
@@ -28,8 +28,8 @@
             <div class="feed-excerpt">{{excerpt words="20"}}</div>
         {{/if}}
         <div class="feed-right">
-            <time class="feed-date" datetime="{{date format="YYYY-MM-DD"}}">
-                {{date published_at}}
+            <time class="feed-date" datetime="{{date updated_at format="YYYY-MM-DD"}}">
+                Updated {{date updated_at format="MMMM, YYYY"}}
             </time>
             <div class="feed-visibility feed-visibility-{{visibility}}">
                 {{> icons/star}}

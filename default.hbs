@@ -20,6 +20,9 @@
 
         {{#is "home"}}
             {{> cover}}
+            {{#if @custom.show_featured_pages}}
+                {{> featured-pages}}
+            {{/if}}
             {{#if @custom.show_featured_posts}}
                 {{> featured}}
             {{/if}}

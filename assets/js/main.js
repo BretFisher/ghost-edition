@@ -8,8 +8,8 @@ var st = 0;
 cover();
 subMenu();
 featured();
+featuredPages();
 feedLayout();
-pagination();
 // archive();
 video();
 gallery();
@@ -137,6 +137,34 @@ function featured() {
     });
 }
 
+function featuredPages() {
+    'use strict';
+    var feed = document.querySelector('.featured-page');
+    if (!feed) return;
+
+    tns({
+        container: feed,
+        controlsText: [
+            '<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M20.547 22.107L14.44 16l6.107-6.12L18.667 8l-8 8 8 8 1.88-1.893z"></path></svg>',
+            '<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path></svg>',
+        ],
+        gutter: 30,
+        loop: false,
+        nav: false,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            768: {
+                items: 2,
+            },
+            992: {
+                items: 3,
+            },
+        },
+    });
+}
+
 function feedLayout() {
     'use strict';
     var wrapper = document.querySelector('.feed-layout');
@@ -155,35 +183,6 @@ function feedLayout() {
         feed.classList.add('expanded');
         localStorage.removeItem('edition_layout');
     });
-}
-
-function pagination() {
-    'use strict';
-    var infScroll;
-
-    if (body.classList.contains('paged-next')) {
-        infScroll = new InfiniteScroll('.post-feed', {
-            append: '.feed',
-            button: '.infinite-scroll-button',
-            debug: false,
-            hideNav: '.pagination',
-            history: false,
-            path: '.pagination .older-posts',
-            scrollThreshold: false,
-        });
-
-        var button = document.querySelector('.infinite-scroll-button');
-
-        infScroll.on('request', function (_path, _fetchPromise) {
-            button.classList.add('loading');
-        });
-
-        infScroll.on('append', function (_response, _path, items) {
-            items[0].classList.add('feed-paged');
-            button.classList.remove('loading');
-            archive(items);
-        });
-    }
 }
 
 function archive(data) {

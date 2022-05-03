@@ -17,17 +17,43 @@
     font-weight: 700;
 }
 
+.featured-wrapper .title-wrap {
+    padding-right: 80px;
+}
+
 .has-serif-title .featured-wrapper .post-title {
     font-family: var(--font-serif);
 }
 
-.featured-title {
+.title-wrap, .featured-title {
     margin-bottom: 4.5rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--light-gray-color);
     font-size: 1.5rem;
     letter-spacing: 0.05rem;
     text-transform: uppercase;
+}
+
+.title-wrap {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.view-all {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.view-all span {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.view-all-posts {
+    text-align: center;
+    margin-top: 2rem;
 }
 
 .featured-feed {
