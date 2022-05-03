@@ -1,4 +1,4 @@
-{{#get "pages" filter="featured:true" limit="all" as |featured-pages|}}
+{{#get "pages" filter="featured:true" limit="3" as |featured-pages|}}
     {{#if featured-pages}}
         <section class="featured-wrapper container">
             {{#if @custom.featured_pages_title}}

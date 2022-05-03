@@ -51,6 +51,11 @@
     line-height: 1;
 }
 
+.view-all-posts {
+    text-align: center;
+    margin-top: 2rem;
+}
+
 .featured-feed {
     opacity: 0;
 }
