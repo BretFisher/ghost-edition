@@ -56,6 +56,15 @@
                 ],
                 "default": "Modern sans-serif"
             },
+            "color_option": {
+                "type": "select",
+                "options": [
+                    "Dark",
+                    "Light",
+                    "Auto"
+                ],
+                "default": "Auto"
+            },
             "email_signup_text": {
                 "type": "text",
                 "group": "homepage"
