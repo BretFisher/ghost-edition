@@ -354,7 +354,7 @@ html.dark .icon-light {
     color: var(--lighter-gray-color);
 }
 
-.home-template .dark-light{
+.home-template .dark-light {
     background: var(--dark-gray-color);
 }
 
